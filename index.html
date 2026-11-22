@@ -71,6 +71,37 @@
     h2 { margin-top: 0; }
     section p { margin-bottom: 0; line-height: 1.6; }
 
+    .games {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+      gap: 1rem;
+      margin: 0 0 1.5rem;
+      padding: 0;
+      list-style: none;
+    }
+
+    .game {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      height: 100%;
+      padding: 1.25rem;
+      border: 1px solid #d5dfd1;
+      border-radius: 0.75rem;
+      background: #fff;
+      color: inherit;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .game:hover, .game:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgb(35 51 74 / 0.12);
+    }
+
+    .game-title { font-size: 1.2rem; font-weight: 700; }
+    .game-text { color: #536177; line-height: 1.5; }
+
     footer {
       padding-block: 2rem;
       color: #536177;
@@ -87,7 +118,21 @@
 
     <section aria-labelledby="games-heading">
       <h2 id="games-heading">Unsere Spiele</h2>
-      <p>Wir arbeiten gerade an etwas Lustigem. Schau bald wieder vorbei und sieh dir an, was wir gebaut haben!</p>
+      <ul class="games">
+        <li>
+          <a class="game" href="/llama-gorillas/">
+            <span class="game-title">🦙 Spuck-Lamas</span>
+            <span class="game-text">Zwei Lamas, ein Gebirge, viel Spucke.</span>
+          </a>
+        </li>
+        <li>
+          <a class="game" href="/motorradrennen/">
+            <span class="game-title">🏍️ Motorrad-Rennen</span>
+            <span class="game-text">Ein Motorrad-Rennspiel für den Browser.</span>
+          </a>
+        </li>
+      </ul>
+      <p>Weitere Spiele sind schon in Arbeit – schau bald wieder vorbei!</p>
     </section>
   </main>
   <footer>Mit viel Fantasie gemacht von Brunnert Games.</footer>
